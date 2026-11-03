@@ -12,7 +12,7 @@ export default async function decorate(block) {
 
   block.textContent = '';
   const footer = document.createElement('div');
-  footer.className = 'footer';
+  footer.className = 'footer-content';
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
   const [social, ...rest] = footer.children;
@@ -32,9 +32,34 @@ export default async function decorate(block) {
   columns.querySelectorAll('.footer-col').forEach((c) => { c.style.position = 'static'; c.style.flex = '0 0 auto'; });
   bottom?.classList.add('footer-bottom');
   const logo = bottom?.querySelector('li a');
-  if (logo) logo.innerHTML = '<img src="/icons/viasat-logo-white.svg" alt="Viasat" width="90" height="30">';
+  if (logo) logo.innerHTML = '<span class="icon icon-viasat-logo-white"></span>';
+  columns.querySelectorAll('p > strong').forEach((s) => { s.parentElement.textContent = s.textContent; });
   footer.append(columns);
-  if (bottom) footer.append(bottom);
+  bottom?.querySelectorAll('li').forEach((li) => {
+    if (li.querySelector('img')) return;
+    const a = li.querySelector('a');
+    const target = a || li;
+    const span = document.createElement('span');
+    span.append(...target.childNodes);
+    target.append(span);
+  });
+  if (bottom) {
+    const list = bottom.querySelector('ul');
+    const a11y = document.createElement('li');
+    a11y.className = 'footer-a11y';
+    a11y.innerHTML = '<a href="https://www.essentialaccessibility.com/viasat" aria-label="Accessibility tools"><span class="icon icon-accessibility"></span></a>';
+    list.append(a11y);
+    const region = bottom.querySelector('p');
+    const flag = document.createElement('span');
+    flag.className = 'icon icon-flag-us';
+    region?.prepend(flag);
+    await Promise.all([...bottom.querySelectorAll('.icon')].map(async (icon) => {
+      const name = [...icon.classList].find((c) => c.startsWith('icon-')).slice(5);
+      const resp = await fetch(`/icons/${name}.svg`);
+      if (resp.ok) icon.innerHTML = await resp.text();
+    }));
+    footer.append(bottom);
+  }
 
   block.append(footer);
 }
