@@ -22,3 +22,27 @@
   src: url('../fonts/source-sans-pro-700.woff2') format('woff2');
 }
 
+/* stand-in for the proprietary Uni Neue used on viasat.com headings */
+@font-face {
+  font-family: "Uni Neue";
+  font-style: normal;
+  font-weight: 350;
+  font-display: swap;
+  src: url('../fonts/source-sans-pro-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: "Uni Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/source-sans-pro-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: "Uni Neue";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../fonts/source-sans-pro-700.woff2') format('woff2');
+}

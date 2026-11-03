@@ -1,0 +1,35 @@
+.tiles ul {
+  display: grid;
+  grid-template-columns: repeat(3, 368px);
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tiles li {
+  position: relative;
+  height: 368px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #111920;
+  box-shadow: 0 4px 14px 2px rgb(0 0 0 / 14%);
+}
+
+.tiles a { display: block; height: 100%; color: #fff; }
+
+.tiles .tile-image { position: absolute; inset: 0; }
+
+.tiles .tile-image picture,
+.tiles .tile-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.tiles .tile-label {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  text-align: center;
+}
