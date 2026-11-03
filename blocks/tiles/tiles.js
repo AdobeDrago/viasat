@@ -1,4 +1,7 @@
+import optimizeImages from '../../scripts/optimize.js';
+
 export default function decorate(block) {
+  optimizeImages(block);
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');

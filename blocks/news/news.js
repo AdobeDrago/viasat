@@ -1,4 +1,7 @@
+import optimizeImages from '../../scripts/optimize.js';
+
 export default function decorate(block) {
+  optimizeImages(block);
   const track = document.createElement('ul');
   track.className = 'news-track';
   [...block.children].forEach((row) => {

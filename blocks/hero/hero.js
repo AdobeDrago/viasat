@@ -1,4 +1,7 @@
+import optimizeImages from '../../scripts/optimize.js';
+
 export default function decorate(block) {
+  optimizeImages(block);
   if (!block.classList.contains('viasat')) return;
   const content = block.children[1]?.firstElementChild;
   if (!content) return;
