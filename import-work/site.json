@@ -1,0 +1,71 @@
+{
+ "$comment": "Per-site harness rules. Every site-specific measuring rule lives here; the scripts carry none. Delete the keys you don't need (defaults in scripts/lib/config.js). Keys starting with $ are notes.",
+ "name": "viasat",
+ "source": {
+  "origin": "https://www.viasat.com"
+ },
+ "rebuild": {
+  "origin": "http://localhost:3000",
+  "preview": "https://{ref}--viasat--adobedrago.aem.page",
+  "repo": "..",
+  "da": {
+   "org": "AdobeDrago",
+   "site": "viasat"
+  }
+ },
+ "$access": "mode: live | allowlisted | headed | chrome | snapshot. allowlisted: header = the header name the site owner allowlisted, its VALUE comes from the env var named in headerEnv (never stored here); origin = staging/origin URL outside the WAF that replaces source.origin. headed: profileDir keeps the session the user created. chrome: the user starts Chrome with --remote-debugging-port=9222 --user-data-dir=<dir>; cdpEnv names the env var holding a non-default CDP URL.",
+ "access": {
+  "mode": "live",
+  "header": null,
+  "headerEnv": "EPR_ALLOW_HEADER",
+  "origin": null,
+  "profileDir": "work/.browser-profile",
+  "cdpEnv": "CHROME_CDP_URL"
+ },
+ "widths": [
+  1440,
+  1280
+ ],
+ "height": 900,
+ "$blockRequests": "regexes for requests aborted in the measuring browser only: personalization decisions, chat loaders, A/B tools, so the default experience is always measured",
+ "blockRequests": [],
+ "$sectionRoot": "container whose children are the page's sections, used by @sec:N and @has:TEXT. A selector, { \"parentOf\": selector }, or per side { \"source\": ..., \"rebuild\": ... }. Default: main (or body) descended while it has one child.",
+ "sectionRoot": {},
+ "$hide": "selectors set to display:none on both sides (third-party widgets, sticky clones that sit over the section being measured). invisible = visibility:hidden (keeps the footprint). hideByText hides buttons by exact label.",
+ "hide": [],
+ "invisible": [],
+ "hideByText": [],
+ "freezeCss": [],
+ "hideIframes": true,
+ "consent": true,
+ "$video": "providers: \"all\" or a list of vidyard, youtube, vimeo, brightcove, wistia. Their iframes are removed as they appear so both sides show the poster frame.",
+ "video": {
+  "providers": "all"
+ },
+ "$carousels": "frozen on slide 1 before capture: slick (jQuery), swiper, hook (window.freezeCarousels on the rebuild side, see starter/)",
+ "carousels": [
+  "slick",
+  "swiper",
+  "hook"
+ ],
+ "scroll": {
+  "max": 30000,
+  "step": 500,
+  "wait": 150
+ },
+ "closeExpanded": "header [aria-expanded=\"true\"]",
+ "$variantGuard": "experiments that swap content: reload until the control experience is served. applies = only check pages that have this selector; require/forbid = [{ sel (resolver), text? }]",
+ "variantGuard": null,
+ "$prepare": "steps run after freezing: { wait }, { mouse: [x, y] } (negative x = from the right edge), { key }, { domClick: resolverSelector }, { click: \"selector#visibleIndex\" }, { scrollTo }, { js }",
+ "prepare": [],
+ "$beforeSection": "steps right before capturing sections whose name matches the regex key; a steps array (both sides) or { source, rebuild }",
+ "beforeSection": {},
+ "$report": "visibleImage: print the alt of the large image in the first viewport (shows a failed carousel freeze)",
+ "report": {},
+ "$gate": "pass = pixel >= gate.pixel and 0 computed-style mismatches; tolerance = numeric px difference tolerated; threshold = pixelmatch colour threshold",
+ "gate": {
+  "pixel": 0.99,
+  "tolerance": 0.5,
+  "threshold": 0.1
+ }
+}

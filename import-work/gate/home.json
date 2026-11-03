@@ -1,0 +1,21 @@
+{
+ "site": "../site.json",
+ "page": "home",
+ "source": "https://www.viasat.com/",
+ "rebuild": "http://localhost:3000/",
+ "widths": [1440, 1280],
+ "out": "work/gate/home",
+ "bundle": "../work/bundles/home",
+ "snapshot": null,
+ "timelines": [],
+ "sections": [
+  { "name": "header", "source": "header", "rebuild": "header .header" },
+  { "name": "s01-hero", "source": "@sec:1", "rebuild": "main > .section:nth-child(1)" },
+  { "name": "s02-banner", "source": "@sec:2", "rebuild": "main > .section:nth-child(2)" },
+  { "name": "s06-home-internet", "source": "@sec:6", "rebuild": "main > .section:nth-child(3)" },
+  { "name": "s07-esg", "source": "@sec:7", "rebuild": "main > .section:nth-child(4)" },
+  { "name": "s10-news", "source": "@sec:10", "rebuild": "main > .section:nth-child(5)" },
+  { "name": "s11-promo", "source": "@sec:11", "rebuild": "main > .section:nth-child(6)" },
+  { "name": "footer", "source": "footer", "rebuild": "footer .footer" }
+ ]
+}
