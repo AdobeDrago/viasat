@@ -20,8 +20,8 @@
   --link-hover-color: #1d3ecf;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: "Source Sans Pro";
+  --heading-font-family: "Uni Neue";
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -37,19 +37,13 @@
   --heading-font-size-xs: 22px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 104px;
 }
 
 /* fallback fonts */
 @font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
+  font-family: source-sans-fallback;
+  size-adjust: 94%;
   src: local('Arial');
 }
 
@@ -323,3 +317,50 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* viasat sections */
+body { overflow-x: hidden; }
+
+main > .section { margin: 0; }
+
+main .section.tiles-section,
+main .section.news-section,
+main .section.disclaimer-section {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main .section.dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  background-color: #1b2630;
+  transform: translateX(-50%);
+}
+
+main .section.dark { color: #fff; }
+
+main .section.tiles-section::before { background-color: #1c262f; }
+
+main .section.tiles-section > div,
+main .section.news-section > div,
+main .section.disclaimer-section > div { max-width: none; margin: 0; padding: 0 24px; }
+
+main .section.tiles-section { padding: 72px 0; }
+
+main .section.news-section { padding: 56px 0 63px; }
+
+main .section.disclaimer-section { padding: 24px 0; font-size: 12px; line-height: 16px; }
+
+main .section.disclaimer-section p { margin: 0 0 16px; }
+
+main .section.hero-section,
+main .section.banner-section,
+main .section.promo-section { padding: 0; max-width: none; }
+
+main .section.disclaimer-section { padding: 40px 0 48px; color: #202e39; }

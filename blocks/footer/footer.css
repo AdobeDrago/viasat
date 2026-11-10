@@ -1,20 +1,156 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #222e3a;
+  color: #9fafbc;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  line-height: 20px;
 }
 
-footer .footer > div {
-  margin: auto;
+footer .footer-content > div {
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  margin: 0 auto;
 }
 
-footer .footer p {
+footer .footer-content ul {
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
-  }
+footer .footer-content a { color: #9fafbc; }
+
+footer .footer-content .footer-social {
+  max-width: none;
+  height: 82px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(0deg, #006a85, #00819d);
 }
+
+footer .footer-content .footer-social ul {
+  display: flex;
+  gap: 24px;
+}
+
+footer .footer-content .footer-social a { display: block; line-height: 0; }
+
+footer .footer-content .footer-social img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+footer .footer-content .footer-columns {
+  display: flex;
+  gap: 64px;
+  max-width: 1200px;
+  height: 505.3px;
+  margin: 0 auto;
+  padding: 48px 24px 0;
+  box-sizing: border-box;
+}
+
+footer .footer-content .footer-col { width: auto; }
+
+footer .footer-content .footer-col p {
+  display: list-item;
+  list-style: none;
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+footer .footer-content .footer-col p + ul { margin-top: 26px; }
+
+footer .footer-content .footer-col li { margin: 0 0 20px; line-height: 20px; }
+
+footer .footer-content .footer-bottom {
+  height: 82.7px;
+  padding: 0 24px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+footer .footer-content .footer-bottom ul {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+footer .footer-content .footer-bottom li { line-height: 15px; }
+
+footer .footer-content .footer-bottom img { width: 90px; height: auto; display: block; }
+
+footer .footer-content .footer-col:nth-child(1) ul { padding-right: 9.6px; }
+
+footer .footer-content .footer-col:nth-child(2) ul { padding-right: 12.7px; }
+
+footer .footer-content .footer-col:nth-child(3) ul { padding-right: 8px; }
+
+footer .footer-content .footer-bottom ul { margin-top: 14.7px; }
+
+footer .footer-content .footer-bottom ul { gap: 0; }
+
+footer .footer-content .footer-bottom li { margin-left: 24px; }
+
+footer .footer-content .footer-bottom li:first-child { margin-left: 0; }
+
+footer .footer-content .footer-bottom li:nth-child(2) { margin-left: 28px; }
+
+footer .footer-content .footer-bottom li:nth-child(3) { margin-left: 24.5px; }
+
+footer .footer-content .footer-bottom li:nth-child(4) { margin-left: 25.4px; }
+
+footer .footer-content .footer-bottom li:nth-child(5) { margin-left: 24.8px; }
+
+footer .footer-content .footer-bottom li:nth-child(5) a span {
+  display: inline-block;
+  width: 266.4px;
+  border-radius: 12px;
+  line-height: 20px;
+}
+
+footer .footer-content .footer-bottom li.footer-a11y { margin-left: 25px; }
+
+footer .footer-content .footer-bottom svg { display: block; }
+
+footer .footer-content .footer-bottom .footer-a11y svg { width: 64px; height: 24px; }
+
+footer .footer-content .footer-bottom .default-content-wrapper > p {
+  display: flex;
+  align-items: flex-start;
+  margin: 10.7px 0 0;
+}
+
+footer .footer-content .footer-bottom .default-content-wrapper > p .icon { margin: -11.5px 8px 0 0; }
+
+footer .footer-content .footer-bottom .default-content-wrapper > p .icon svg { width: 48px; height: 32px; }
+
+footer .footer-content .footer-bottom .default-content-wrapper > p a { display: block; line-height: 20px; text-align: right; }
+
+footer .footer-content .footer-bottom .default-content-wrapper > p a span { display: block; text-align: right; }
+
+footer .footer-content .footer-bottom .default-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+footer .footer-content .footer-bottom li:first-child svg {
+  width: 90px;
+  height: 30px;
+  padding-bottom: 3.5px;
+}
+
+footer .footer-content .footer-bottom li:first-child a {
+  display: block;
+  width: 90px;
+}
+
+footer .footer-content .footer-bottom li:nth-child(6) { margin-left: 25.4px; }
+
+footer .footer-content .footer-bottom li:nth-child(2) { padding-top: 0.8px; }
+
+footer .footer-content .footer-bottom li:nth-child(5) { margin-top: -3px; }

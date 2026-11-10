@@ -1,0 +1,22 @@
+{
+ "repo": "..",
+ "sections": "pages",
+ "da": {
+  "org": "AdobeDrago",
+  "site": "viasat",
+  "dir": "da"
+ },
+ "template": "viasat",
+ "pages": {
+  "home": {
+   "path": "index",
+   "source": "https://www.viasat.com/",
+   "gate": "gate/home.json",
+   "bundle": "work/bundles/home"
+  }
+ },
+ "fragments": {
+  "_footer": "footer",
+  "_nav": "nav"
+ }
+}
