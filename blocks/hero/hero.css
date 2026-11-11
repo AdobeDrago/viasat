@@ -1,5 +1,4 @@
-main .hero-container .hero-wrapper,
-main .hero-wrapper {
+main .hero-container .hero-wrapper {
   max-width: none;
   margin: 0;
   padding: 0;
@@ -86,7 +85,10 @@ main .hero-wrapper {
   line-height: 20px;
 }
 
-.hero.viasat .hero-form label i { color: #ff8c8c; font-style: normal; }
+.hero.viasat .hero-form label i {
+  color: #ff8c8c;
+  font-style: normal;
+}
 
 .hero.viasat .hero-form input {
   display: block;
