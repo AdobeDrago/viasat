@@ -6,7 +6,7 @@ main .promo-container .promo-wrapper {
 
 .promo {
   position: relative;
-  height: 546px;
+  aspect-ratio: 1920 / 728;
   overflow: hidden;
   background-color: #1c262f;
   color: #fff;
@@ -59,3 +59,55 @@ main .promo-container .promo-wrapper {
 }
 
 .promo > div:last-child { z-index: 2; }
+
+.promo.page-hero > div:last-child { padding-top: 179px; }
+
+.promo.page-hero h1 {
+  position: relative;
+  margin: 0;
+  padding-bottom: 28px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 48px;
+}
+
+.promo.page-hero h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 98px;
+  height: 3px;
+  background-color: #3bc0e0;
+}
+
+.promo.page-hero p,
+.promo.cta p:not(:last-child) {
+  margin-top: 34px;
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: 350;
+  line-height: 32px;
+}
+
+.promo.page-hero::after { background: rgb(0 0 0 / 25.5%); }
+
+.promo.cta::after { display: none; }
+
+.promo.cta > div:last-child { padding-top: 182px; }
+
+.promo.cta h2 { font-weight: 800; }
+
+.promo.cta p:not(:last-child) { margin-top: 33px; }
+
+.promo.cta p:last-child { margin-top: 34px; }
+
+.promo.cta a.button {
+  padding: 12px 28px;
+  border-radius: 1000px;
+  background-color: #18ecfc;
+  color: #202e39;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}

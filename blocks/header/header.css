@@ -141,3 +141,20 @@ header nav .nav-tools .icon {
 header nav .nav-tools a {
   margin-top: 9px;
 }
+
+header nav .nav-primary a[aria-current='page'] { margin-left: 6.7px; }
+
+header nav .nav-primary a[aria-current='page'] span {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+header .header-section-nav nav .nav-sub .nav-brand { margin-right: 38.5px; }
+
+header .header-section-nav nav .nav-sub li a {
+  margin: 0 12px;
+  padding: 14px 3.55px 16px;
+  line-height: 24px;
+}
