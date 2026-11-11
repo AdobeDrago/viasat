@@ -37,6 +37,14 @@ export default async function decorate(block) {
     a.append(span);
   });
 
+  const section = window.location.pathname.split('/')[1];
+  if (section) {
+    nav.querySelectorAll('.nav-primary a').forEach((a) => {
+      if (new URL(a.href).pathname.split('/')[1] === section) a.setAttribute('aria-current', 'page');
+    });
+  }
+  if (navMeta) block.classList.add('header-section-nav');
+
   const tools = document.createElement('div');
   tools.className = 'nav-tools';
   tools.innerHTML = '<a href="https://www.viasat.com/search/" aria-label="Search"><span class="icon icon-search"></span></a>';
