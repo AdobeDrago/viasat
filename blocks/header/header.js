@@ -1,18 +1,6 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
-
-/**
- * loads and decorates the header
- * @param {Element} block The header block element
- */
-async function inlineIcons(root) {
-  await Promise.all([...root.querySelectorAll('.icon')].map(async (icon) => {
-    const name = [...icon.classList].find((c) => c.startsWith('icon-'))?.slice(5);
-    if (!name) return;
-    const resp = await fetch(`/icons/${name}.svg`);
-    if (resp.ok) icon.innerHTML = await resp.text();
-  }));
-}
+import inlineIcons from '../../scripts/icons.js';
 
 export default async function decorate(block) {
   const navMeta = getMetadata('nav');

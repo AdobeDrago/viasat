@@ -72,3 +72,37 @@ Icons in the icon grid and plan cards are Material Symbols stand-ins for the sou
 
 Navigation: links to pages built on EDS (/, /aviation/, /energy/, /satellite-internet/) are relative in nav,
 footer, home tiles and breadcrumb content, and the header logo links to /. Unbuilt pages still link to production.
+
+# Viasat enterprise page (1440 / 1280), branch `enterprise`
+
+No new blocks. Reused: header (subnav, no breadcrumb), promo (page-hero + new `split`/`split reverse`/
+`split large` variants — a literal 50/50 two-column layout, distinct from the overlay pattern other
+promo variants use), tiles (+ new `small` 4-col static-grid size, `carousel` scroll mode via
+scripts/carousel.js, optional badge chip and icon-only corner link), news (reused as-is for the news
+section, now light instead of dark — news.js skips the category badge when the cell is empty).
+New shared file: scripts/icons.js (icon-inlining helper extracted from header.js, now shared with tiles).
+
+| Section | Pixel 1440 / 1280 | Style mismatches | Note |
+|---|---|---|---|
+| footer | 99.5 / 99.4 | 0 | passes |
+| s3 help (plain text banner) | 99.9 / 99.9 | 0 | passes |
+| s7 ELEVATE | 98.5 / 97.7 | 33 | |
+| s6 SolutionScope | 98.0 / 97.4 | 29 | |
+| header | 97.0 / 96.6 | 8 | sub-pixel link offsets, same residual pattern as other pages |
+| s1 hero | 96.5 / 94.8 | 31 | |
+| s9 news (light variant) | 62.2 / 62.2 | 131 | height still ~130px short of source; stopped after 3 tuning passes per stop rule |
+| s4 solutions carousel | 59.9 / 59.9 | 42 | height ~32px short |
+| s8 perspectives carousel | 53.7 / 53.7 | 52 | height ~46px over |
+| s5 industries grid | 37.9 / 37.9 | 107 | height ~113px short |
+| s2 modern (split, large heading) | 11.9 / 11.6 | 17 | heading/layout now matches visually; score capped by JPEG-rendition pixel diff across the full-bleed photo half (see diff image) — same effect seen on every photo-heavy promo section across the site, just more dominant here since the photo is half the frame |
+
+Two real content bugs found and fixed: SolutionScope and ELEVATE referenced each other's source image
+(both sections cite near-identical CMS asset names); the shared `tiles` block's badge/no-badge
+detection via `querySelector('p')` false-positived on the framework's own auto-wrap of bare links in
+`<p>`, corrupting home's and industries' tiles with a duplicate phantom badge — fixed by only treating
+a paragraph as a badge when it's not the sole paragraph (i.e. when a second, link-wrapping paragraph
+follows it). Full regression run confirms home/aviation/energy/satellite-internet are unaffected
+(identical mismatch counts to before this branch).
+
+Offsets: 2/22 sections at the source's page position — s2's photo-diff and s9's height gap push
+everything below them out of alignment. Accepted as a known residual given the stop rule.

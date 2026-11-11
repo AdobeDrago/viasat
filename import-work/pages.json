@@ -31,6 +31,12 @@
    "source": "https://www.viasat.com/satellite-internet/",
    "gate": "gate/satellite-internet.json",
    "bundle": "work/bundles/satellite-internet"
+  },
+  "enterprise": {
+   "path": "enterprise/index",
+   "source": "https://www.viasat.com/enterprise/",
+   "gate": "gate/enterprise.json",
+   "bundle": "work/bundles/enterprise"
   }
  },
  "fragments": {
@@ -38,6 +44,7 @@
   "_nav": "nav",
   "_aviation-nav": "aviation/nav",
   "_energy-nav": "energy/nav",
-  "_si-utility": "satellite-internet/utility"
+  "_si-utility": "satellite-internet/utility",
+  "_enterprise-nav": "enterprise/nav"
  }
 }

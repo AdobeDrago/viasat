@@ -1,0 +1,71 @@
+{
+ "site": "../site.json",
+ "page": "enterprise",
+ "source": "https://www.viasat.com/enterprise/",
+ "rebuild": "http://localhost:3000/enterprise/",
+ "widths": [
+  1440,
+  1280
+ ],
+ "out": "work/gate/enterprise",
+ "bundle": "../work/bundles/enterprise",
+ "snapshot": null,
+ "timelines": [],
+ "sections": [
+  {
+   "name": "header",
+   "source": "header",
+   "rebuild": "header .header"
+  },
+  {
+   "name": "s1-hero",
+   "source": "@sec:1",
+   "rebuild": "main > .section:nth-child(1)"
+  },
+  {
+   "name": "s2-modern",
+   "source": "@sec:2",
+   "rebuild": "main > .section:nth-child(2)"
+  },
+  {
+   "name": "s3-help",
+   "source": "@sec:3",
+   "rebuild": "main > .section:nth-child(3)"
+  },
+  {
+   "name": "s4-solutions",
+   "source": "@sec:4",
+   "rebuild": "main > .section:nth-child(4)"
+  },
+  {
+   "name": "s5-industries",
+   "source": "@sec:5",
+   "rebuild": "main > .section:nth-child(5)"
+  },
+  {
+   "name": "s6-solutionscope",
+   "source": "@sec:6",
+   "rebuild": "main > .section:nth-child(6)"
+  },
+  {
+   "name": "s7-elevate",
+   "source": "@sec:7",
+   "rebuild": "main > .section:nth-child(7)"
+  },
+  {
+   "name": "s8-perspectives",
+   "source": "@sec:8",
+   "rebuild": "main > .section:nth-child(8)"
+  },
+  {
+   "name": "s9-news",
+   "source": "@sec:9",
+   "rebuild": "main > .section:nth-child(9)"
+  },
+  {
+   "name": "footer",
+   "source": "footer",
+   "rebuild": "footer .footer"
+  }
+ ]
+}

@@ -10,10 +10,12 @@ export default function decorate(block) {
     const [pic, body] = row.children;
     const [cat, date, title, tags] = body.children;
     pic.className = 'news-image';
-    const badge = document.createElement('span');
-    badge.className = 'news-category';
-    badge.textContent = cat.textContent;
-    pic.append(badge);
+    if (cat.textContent.trim()) {
+      const badge = document.createElement('span');
+      badge.className = 'news-category';
+      badge.textContent = cat.textContent;
+      pic.append(badge);
+    }
     const info = document.createElement('div');
     info.className = 'news-body';
     const time = document.createElement('p');
