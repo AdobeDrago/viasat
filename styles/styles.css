@@ -370,6 +370,8 @@ main .section.disclaimer-section {
   color: #202e39;
 }
 
+/* stylelint-disable no-descending-specificity -- rules below are scoped by distinct section/variant classes and never target the same element */
+
 /* aviation sections */
 main .section.notice-section {
   display: flex;
@@ -498,10 +500,6 @@ main .section.solutions-section h2::after {
   background-color: #3bc0e0;
 }
 
-main .section.solutions-section.compact h2 {
-  padding-bottom: 28px;
-}
-
 main .section.capacity-section {
   box-sizing: border-box;
   padding: 152px 0;
@@ -558,4 +556,168 @@ main .section.breadcrumb-section .icon img {
   display: block;
   width: 16px;
   height: 16px;
+}
+
+/* residential (satellite internet) sections */
+
+main .section.light-section {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #202e39;
+}
+
+main .section.light-section > div {
+  max-width: none;
+  margin: 0;
+  padding: 0 24px;
+}
+
+main .section.light-section.gray::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  background-color: #f2f5f8;
+  transform: translateX(-50%);
+}
+
+main .section.light-section.centered { text-align: center; }
+
+main .section.light-section h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 40px;
+}
+
+main .section.light-section.centered h2 + p {
+  max-width: 760px;
+  margin: 40px auto 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+main .section.light-section .cards-wrapper { margin-top: 48px; }
+
+main .section.light-section .button-container a.button,
+main .section.light-section p > a:only-child {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 1000px;
+  background-color: #00819d;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+main .section.light-section.gray:not(.plans-section) { padding: 64px 0 32px; }
+
+main .section.light-section.gray:not(.plans-section) .default-content-wrapper:last-child p { margin: 48px 0 0; }
+
+main .section.light-section.gray:not(.plans-section) .default-content-wrapper:last-child p + p {
+  margin-top: 40px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+main .section.light-section.gray:not(.plans-section) .default-content-wrapper:last-child p + p a {
+  display: inline;
+  padding: 0;
+  background: none;
+  color: #006ead;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+main .section.why-section { padding: 56px 0; }
+
+main .section.why-section .cards-wrapper { margin-top: 48px; }
+
+main .section.plans-section { padding: 40px 0 48px; }
+
+main .section.plans-section .default-content-wrapper h3 + p { margin-top: 52px; }
+
+main .section.plans-section h2 + p { margin-top: 40px; }
+
+main .section.plans-section p strong {
+  display: inline-block;
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+main .section.plans-section .cards-wrapper {
+  max-width: none;
+  margin: 64px 0 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+main .section.plans-section h2 + p + p { margin-top: 24px; }
+
+main .section.plans-section .default-content-wrapper h3 {
+  margin: 22px 0 0;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 32px;
+}
+
+main .section.faq-section { padding: 96px 0 56px; }
+
+main .section.faq-section h2 {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+main .section.faq-section .accordion-wrapper { margin-top: 24px; }
+
+main .section.faq-section .default-content-wrapper:last-child {
+  margin-top: 15px;
+  text-align: right;
+}
+
+main .section.faq-section .default-content-wrapper:last-child a {
+  display: inline;
+  padding: 0;
+  background: none;
+  color: #202e39;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+main .section.notice-section.offer {
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  text-align: center;
+  align-content: flex-start;
+  row-gap: 16px;
+  height: 92px;
+  padding-top: 12px;
+  background-color: #f2f5f8;
+}
+
+main .section.notice-section.offer p:last-child {
+  flex: 0 0 100%;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+}
+
+main .section.notice-section.offer a { color: #006ead; }
+
+main .section.notice-section.offer p > a:only-child {
+  background-color: #00819d;
+  box-shadow: none;
+  color: #fff;
+}
+
+main .section.solutions-section.compact h2 {
+  padding-bottom: 28px;
 }

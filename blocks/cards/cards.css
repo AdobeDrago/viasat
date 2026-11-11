@@ -25,3 +25,174 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+/* icons: a titled white card of icon + label items */
+.cards.icons ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 52px;
+  box-sizing: border-box;
+  width: 956px;
+  margin: 0 auto;
+  padding: 40px 8px 48px;
+  border-radius: 16px;
+  background-color: #fff;
+}
+
+.cards.icons li {
+  margin: 0;
+  border: 0;
+  background: none;
+  text-align: center;
+}
+
+.cards.feature li {
+  box-sizing: border-box;
+  height: 204px;
+  margin: 0;
+  padding: 28px;
+  border: 0;
+  border-radius: 8px;
+  background-image: linear-gradient(62.02deg, #006a85 17.68%, #00819d 151.32%);
+  color: #fff;
+  text-align: left;
+}
+
+.cards.plans li {
+  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 310.8px;
+  height: 292px;
+  margin: 0;
+  padding: 18.8px 28px;
+  border: 0;
+  border-radius: 16px;
+  background-color: #00819d;
+  color: #fff;
+  text-align: left;
+  scroll-snap-align: start;
+}
+
+.cards.icons li:first-child { grid-column: 1 / -1; }
+
+.cards.icons .cards-card-body { margin: 0; }
+
+.cards.icons h3,
+.cards.icons p {
+  margin: 0;
+  color: #202e39;
+  font-family: var(--heading-font-family);
+  font-size: 20px;
+  font-weight: 350;
+  line-height: 28px;
+}
+
+.cards.icons .icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 8px;
+}
+
+/* feature: four gradient cards */
+.cards.feature ul {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards.feature .cards-card-body { margin: 0; }
+
+.cards.feature h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 36px;
+}
+
+.cards.feature p {
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* plans: scrolling teal cards */
+.cards.plans ul {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0 0 0 48px;
+  overflow-x: auto;
+  scroll-padding-inline-start: 48px;
+  list-style: none;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.cards.plans .cards-card-body { margin: 0; }
+
+.cards.plans h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+}
+
+.cards.plans p {
+  margin: 16.2px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cards.plans .icon {
+  position: absolute;
+  bottom: 16px;
+  left: 22px;
+  width: 66px;
+  height: 66px;
+  filter: invert(1);
+}
+
+.cards .cards-controls {
+  position: relative;
+  height: 30px;
+  margin-top: 34px;
+}
+
+.cards .cards-prev,
+.cards .cards-next {
+  position: absolute;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00819d;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cards .cards-prev { left: 78px; }
+
+.cards .cards-next { left: 118px; }
+
+.cards .cards-dots {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.cards .cards-dots span {
+  box-sizing: border-box;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #00819d;
+  border-radius: 50%;
+}
+
+.cards .cards-dots span.active { background-color: #00819d; }

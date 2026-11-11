@@ -25,12 +25,19 @@
    "source": "https://www.viasat.com/energy/",
    "gate": "gate/energy.json",
    "bundle": "work/bundles/energy"
+  },
+  "satellite-internet": {
+   "path": "satellite-internet/index",
+   "source": "https://www.viasat.com/satellite-internet/",
+   "gate": "gate/satellite-internet.json",
+   "bundle": "work/bundles/satellite-internet"
   }
  },
  "fragments": {
   "_footer": "footer",
   "_nav": "nav",
   "_aviation-nav": "aviation/nav",
-  "_energy-nav": "energy/nav"
+  "_energy-nav": "energy/nav",
+  "_si-utility": "satellite-internet/utility"
  }
 }

@@ -154,3 +154,16 @@ header .header-section-nav nav .nav-sub li a {
   padding: 14px 3.55px 16px;
   line-height: 24px;
 }
+
+header nav .nav-sub:has(.nav-utility) { right: 12px; }
+
+header nav .nav-sub .nav-utility {
+  display: flex;
+  gap: 45.9px;
+  margin-left: auto;
+}
+
+header nav .nav-sub .nav-utility li a {
+  margin: 0;
+  text-align: right;
+}

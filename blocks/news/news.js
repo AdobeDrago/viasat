@@ -1,4 +1,5 @@
 import optimizeImages from '../../scripts/optimize.js';
+import carouselControls from '../../scripts/carousel.js';
 
 export default function decorate(block) {
   optimizeImages(block);
@@ -32,23 +33,6 @@ export default function decorate(block) {
     li.append(pic, info);
     track.append(li);
   });
-  const controls = document.createElement('div');
-  controls.className = 'news-controls';
-  const mk = (cls, label, delta) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.className = cls;
-    b.setAttribute('aria-label', label);
-    b.addEventListener('click', () => track.scrollBy({ left: delta * 392, behavior: 'smooth' }));
-    return b;
-  };
-  const dots = document.createElement('div');
-  dots.className = 'news-dots';
-  [...block.children].forEach((_, i) => {
-    const d = document.createElement('span');
-    if (i === 0) d.className = 'active';
-    dots.append(d);
-  });
-  controls.append(mk('news-prev', 'Previous', -1), mk('news-next', 'Next', 1), dots);
+  const controls = carouselControls(track, 'news');
   block.replaceChildren(track, controls);
 }
