@@ -111,3 +111,5 @@ main .promo-container .promo-wrapper {
   font-weight: 600;
   line-height: 24px;
 }
+
+.promo.cta > div:last-child > div { max-width: 720px; }
