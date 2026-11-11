@@ -1,0 +1,66 @@
+{
+ "site": "../site.json",
+ "page": "satellite-internet",
+ "source": "https://www.viasat.com/satellite-internet/",
+ "rebuild": "http://localhost:3000/satellite-internet/",
+ "widths": [
+  1440,
+  1280
+ ],
+ "out": "work/gate/satellite-internet",
+ "bundle": "../work/bundles/satellite-internet",
+ "snapshot": null,
+ "timelines": [],
+ "sections": [
+  {
+   "name": "header",
+   "source": "header",
+   "rebuild": "header .header"
+  },
+  {
+   "name": "offer",
+   "source": "#Target-sticky-nav-XF-1",
+   "rebuild": "main > .section:nth-child(1)"
+  },
+  {
+   "name": "s1-hero",
+   "source": "@sec:1",
+   "rebuild": "main > .section:nth-child(2)"
+  },
+  {
+   "name": "s4-new-era",
+   "source": "@sec:4",
+   "rebuild": "main > .section:nth-child(3)"
+  },
+  {
+   "name": "s5-how-it-works",
+   "source": "@sec:5",
+   "rebuild": "main > .section:nth-child(4)"
+  },
+  {
+   "name": "s6-right-for-you",
+   "source": "@sec:6",
+   "rebuild": "main > .section:nth-child(5)"
+  },
+  {
+   "name": "s7-why-viasat",
+   "source": "@sec:7",
+   "rebuild": "main > .section:nth-child(6)"
+  },
+  {
+   "name": "s8-learn-more",
+   "source": "@sec:8",
+   "rebuild": "main > .section:nth-child(7)"
+  },
+  {
+   "name": "s9-faq",
+   "source": "@sec:9",
+   "rebuild": "main > .section:nth-child(8)"
+  },
+  {
+   "name": "footer",
+   "source": "footer",
+   "rebuild": "footer .footer"
+  }
+ ]
+}

@@ -19,9 +19,13 @@ export default async function decorate(block) {
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   // a section subnav fragment holds only that section's sub-links and replaces the default ones
   const subnavMeta = getMetadata('subnav');
-  const [fragment, subnav] = await Promise.all([
+  // a utility fragment adds right-aligned account links to the sub bar
+  const utilityMeta = getMetadata('utility');
+  const optional = (meta) => (meta ? loadFragment(new URL(meta, window.location).pathname) : null);
+  const [fragment, subnav, utility] = await Promise.all([
     loadFragment(navPath),
-    subnavMeta ? loadFragment(new URL(subnavMeta, window.location).pathname) : null,
+    optional(subnavMeta),
+    optional(utilityMeta),
   ]);
 
   block.textContent = '';
@@ -37,6 +41,12 @@ export default async function decorate(block) {
 
   const subList = subnav?.querySelector('ul');
   if (subList) nav.querySelector('.nav-sub ul')?.replaceWith(subList);
+
+  const utilityList = utility?.querySelector('ul');
+  if (utilityList) {
+    utilityList.className = 'nav-utility';
+    nav.querySelector('.nav-sub')?.append(utilityList);
+  }
 
   nav.querySelectorAll('li > a').forEach((a) => {
     const span = document.createElement('span');
@@ -60,7 +70,7 @@ export default async function decorate(block) {
 
   const brand = document.createElement('a');
   brand.className = 'nav-brand';
-  brand.href = 'https://www.viasat.com/';
+  brand.href = '/';
   brand.setAttribute('aria-label', 'Viasat');
   brand.innerHTML = '<span class="icon icon-viasat-logo"></span>';
   nav.querySelector('.nav-sub')?.prepend(brand);

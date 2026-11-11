@@ -48,3 +48,27 @@ section styles, solutions (+ `outline`), feature-card. New: `breadcrumb-section`
 De-duplication: section navs are now sub-link-only fragments (`subnav` metadata); `/aviation/nav` converted.
 Shared fixes found here: feature-card poster was capped at 870px (now full 1056px), card and section heights are
 padding-based instead of fixed (aviation capacity 96.4 -> 96.9).
+
+# Viasat satellite-internet page (1440), branch `satellite-internet`
+
+One new block (`accordion`). Reused: promo (+ `badge`, `right`, `banner`; ESG overlay is now an explicit `tint`),
+boilerplate `cards` (+ `icons`, `feature`, `plans` + `carousel`), notice-section (+ `offer`), header (+ `utility` fragment).
+Shared: carousel controls moved from `news` into `scripts/carousel.js` (used by news and cards).
+
+| Section | Pixel 1440 | Style mismatches |
+|---|---|---|
+| footer | 99.5 | 0 |
+| s9 faq | 99.8 | 34 |
+| s5 how it works | 99.7 | 4 |
+| s4 new era | 99.7 | 17 |
+| s7 why Viasat | 98.7 | 12 |
+| s8 plans carousel | 97.6 | 47 |
+| s6 right for you | 97.5 | 58 |
+| header | 96.5 | 11 |
+| offer bar | 95.8 | 34 |
+| s1 hero (CNET badge) | 99.1 | 25 |
+
+Icons in the icon grid and plan cards are Material Symbols stand-ins for the source's proprietary icon font.
+
+Navigation: links to pages built on EDS (/, /aviation/, /energy/, /satellite-internet/) are relative in nav,
+footer, home tiles and breadcrumb content, and the header logo links to /. Unbuilt pages still link to production.

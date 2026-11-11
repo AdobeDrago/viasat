@@ -66,12 +66,17 @@ main .promo-container .promo-wrapper {
   line-height: 48px;
 }
 
-.promo::after {
+.promo.tint::after,
+.promo.page-hero::after,
+.promo.dim::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgb(0 30 45 / 35%), rgb(0 30 45 / 12%));
 }
+
+.promo.tint::after { background: linear-gradient(90deg, rgb(0 30 45 / 35%), rgb(0 30 45 / 12%)); }
+
+/* stylelint-disable no-descending-specificity -- rules below are scoped by distinct promo variant classes and never target the same element */
 
 .promo.page-hero > div:last-child { padding-top: 179px; }
 
@@ -94,6 +99,18 @@ main .promo-container .promo-wrapper {
   background-color: #3bc0e0;
 }
 
+.promo.right p {
+  margin-top: 32px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.promo.banner p {
+  margin-top: 32px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
 .promo.page-hero p,
 .promo.cta p:not(:last-child) {
   margin-top: 34px;
@@ -104,12 +121,7 @@ main .promo-container .promo-wrapper {
 }
 
 .promo.page-hero::after,
-.promo.dim::after {
-  display: block;
-  background: rgb(0 0 0 / 25.5%);
-}
-
-.promo.cta:not(.dim)::after { display: none; }
+.promo.dim::after { background: rgb(0 0 0 / 25.5%); }
 
 .promo.cta > div:last-child { padding-top: 182px; }
 
@@ -129,6 +141,37 @@ main .promo-container .promo-wrapper {
   line-height: 24px;
 }
 
+.promo.badge > div:nth-child(2) {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 114.4px 24px 0;
+}
+
+.promo.badge > div:nth-child(3) {
+  position: absolute;
+  height: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  top: 98.4px;
+  left: calc(50% + 288px);
+  width: 192px;
+  text-align: center;
+}
+
+.promo.right > div:last-child {
+  padding-top: 285px;
+  padding-left: 696px;
+  color: #202e39;
+}
+
+.promo.banner > div:last-child { padding: 72px 24px 88px; }
+
 .promo.cta > div:last-child > div { max-width: 900px; }
 
 .promo.cta.compact {
@@ -136,11 +179,88 @@ main .promo-container .promo-wrapper {
   height: 476px;
 }
 
+.promo.badge > div:nth-child(3) img {
+  display: block;
+  width: 192px;
+  height: 285.2px;
+}
+
+.promo.banner > div:first-child img {
+  height: auto;
+  aspect-ratio: 1920 / 728;
+}
+
 .promo.cta.compact > div:first-child img {
   height: auto;
   aspect-ratio: 1920 / 728;
 }
 
+.promo.badge > div:nth-child(2) > div { max-width: 512px; }
+
+.promo.right > div:last-child > div { max-width: 480px; }
+
+.promo.banner > div:last-child > div { max-width: none; }
+
 .promo.cta.compact > div:last-child { padding-top: 153px; }
 
+.promo.badge > div:nth-child(2) p {
+  margin-top: 32px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.promo.badge > div:nth-child(3) p { margin: 0; }
+
 .promo.cta.compact p:not(:last-child) { margin-top: 17px; }
+
+.promo.badge h1 {
+  margin: 0;
+  padding-bottom: 28px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 48px;
+}
+
+.promo.badge > div:nth-child(2) p:last-child { margin-top: 32px; }
+
+.promo.badge a.button,
+.promo.right a.button {
+  padding: 8px 24px;
+  border-radius: 1000px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.promo.badge a.button {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #fff;
+  color: #fff;
+}
+
+.promo.badge > div:nth-child(3) p:last-child {
+  width: 320px;
+  margin: 16.4px 0 0 -64px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.promo.right { aspect-ratio: 1920 / 1080; }
+
+.promo.right h2 { font-weight: 800; }
+
+.promo.right a.button {
+  background-color: #00819d;
+  color: #fff;
+}
+
+.promo.banner {
+  aspect-ratio: auto;
+  height: auto;
+}
+
+.promo.banner h2 { font-weight: 800; }
+
+.promo.banner p + p,
+.promo.banner p:last-child { margin-top: 24px; }
