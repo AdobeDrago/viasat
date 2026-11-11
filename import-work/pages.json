@@ -19,11 +19,18 @@
    "source": "https://www.viasat.com/aviation/",
    "gate": "gate/aviation.json",
    "bundle": "work/bundles/aviation"
+  },
+  "energy": {
+   "path": "energy/index",
+   "source": "https://www.viasat.com/energy/",
+   "gate": "gate/energy.json",
+   "bundle": "work/bundles/energy"
   }
  },
  "fragments": {
   "_footer": "footer",
   "_nav": "nav",
-  "_aviation-nav": "aviation/nav"
+  "_aviation-nav": "aviation/nav",
+  "_energy-nav": "energy/nav"
  }
 }

@@ -1,0 +1,56 @@
+{
+ "site": "../site.json",
+ "page": "energy",
+ "source": "https://www.viasat.com/energy/",
+ "rebuild": "http://localhost:3000/energy/",
+ "widths": [
+  1440,
+  1280
+ ],
+ "out": "work/gate/energy",
+ "bundle": "../work/bundles/energy",
+ "snapshot": null,
+ "timelines": [],
+ "sections": [
+  {
+   "name": "header",
+   "source": "header",
+   "rebuild": "header .header"
+  },
+  {
+   "name": "breadcrumb",
+   "source": ".breadcrumb",
+   "rebuild": "main > .section:nth-child(1)"
+  },
+  {
+   "name": "s1-hero",
+   "source": "@sec:1",
+   "rebuild": "main > .section:nth-child(2)"
+  },
+  {
+   "name": "s2-intro",
+   "source": "@sec:2",
+   "rebuild": "main > .section:nth-child(3)"
+  },
+  {
+   "name": "s3-solutions",
+   "source": "@sec:3",
+   "rebuild": "main > .section:nth-child(4)"
+  },
+  {
+   "name": "s4-video",
+   "source": "@sec:4",
+   "rebuild": "main > .section:nth-child(5)"
+  },
+  {
+   "name": "s5-connect",
+   "source": "@sec:5",
+   "rebuild": "main > .section:nth-child(6)"
+  },
+  {
+   "name": "footer",
+   "source": "footer",
+   "rebuild": "footer .footer"
+  }
+ ]
+}

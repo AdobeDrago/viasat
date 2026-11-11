@@ -438,6 +438,14 @@ main .section.intro-section .icon img {
   margin: 0 auto;
 }
 
+main .section.intro-section .icon-oil-rig,
+main .section.intro-section .icon-oil-rig img {
+  width: 128px;
+  height: 128px;
+}
+
+main .section.intro-section .icon-oil-rig { margin-bottom: 24px; }
+
 main .section.intro-section h2 {
   margin-top: 16px;
   font-size: 32px;
@@ -457,8 +465,11 @@ main .section.intro-section h2 + p {
 
 main .section.solutions-section {
   box-sizing: border-box;
-  height: 1816.4px;
-  padding: 153px 0 0;
+  padding: 153px 0 152px;
+}
+
+main .section.solutions-section.compact {
+  padding: 112px 0;
 }
 
 main .section.solutions-section > div {
@@ -487,14 +498,64 @@ main .section.solutions-section h2::after {
   background-color: #3bc0e0;
 }
 
+main .section.solutions-section.compact h2 {
+  padding-bottom: 28px;
+}
+
 main .section.capacity-section {
   box-sizing: border-box;
-  height: 1422px;
-  padding: 152px 0 0;
+  padding: 152px 0;
 }
 
 main .section.capacity-section > div {
   max-width: none;
   margin: 0;
   padding: 0 24px;
+}
+
+main .section.breadcrumb-section {
+  box-sizing: border-box;
+  max-width: 1152px;
+  height: 48px;
+  margin: 0 auto;
+  padding: 14px 0;
+}
+
+main .section.breadcrumb-section > div {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+main .section.breadcrumb-section ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #202e39;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+main .section.breadcrumb-section li {
+  display: flex;
+  align-items: center;
+}
+
+main .section.breadcrumb-section li + li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  margin: 0 6px 0 4px;
+  border-top: 1.5px solid #202e39;
+  border-right: 1.5px solid #202e39;
+  transform: rotate(45deg);
+}
+
+main .section.breadcrumb-section .icon,
+main .section.breadcrumb-section .icon img {
+  display: block;
+  width: 16px;
+  height: 16px;
 }

@@ -17,7 +17,12 @@ async function inlineIcons(root) {
 export default async function decorate(block) {
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
-  const fragment = await loadFragment(navPath);
+  // a section subnav fragment holds only that section's sub-links and replaces the default ones
+  const subnavMeta = getMetadata('subnav');
+  const [fragment, subnav] = await Promise.all([
+    loadFragment(navPath),
+    subnavMeta ? loadFragment(new URL(subnavMeta, window.location).pathname) : null,
+  ]);
 
   block.textContent = '';
   const nav = document.createElement('nav');
@@ -29,6 +34,9 @@ export default async function decorate(block) {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
   });
+
+  const subList = subnav?.querySelector('ul');
+  if (subList) nav.querySelector('.nav-sub ul')?.replaceWith(subList);
 
   nav.querySelectorAll('li > a').forEach((a) => {
     const span = document.createElement('span');
@@ -43,7 +51,7 @@ export default async function decorate(block) {
       if (new URL(a.href).pathname.split('/')[1] === section) a.setAttribute('aria-current', 'page');
     });
   }
-  if (navMeta) block.classList.add('header-section-nav');
+  if (subList) block.classList.add('header-section-nav');
 
   const tools = document.createElement('div');
   tools.className = 'nav-tools';
