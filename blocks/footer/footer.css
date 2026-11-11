@@ -33,7 +33,10 @@ footer .footer-content .footer-social ul {
   gap: 24px;
 }
 
-footer .footer-content .footer-social a { display: block; line-height: 0; }
+footer .footer-content .footer-social a {
+  display: block;
+  line-height: 0;
+}
 
 footer .footer-content .footer-social img {
   width: 24px;
@@ -62,9 +65,19 @@ footer .footer-content .footer-col p {
   line-height: 16px;
 }
 
+footer .footer-content .footer-bottom ul {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 14.7px;
+  gap: 0;
+}
+
 footer .footer-content .footer-col p + ul { margin-top: 26px; }
 
-footer .footer-content .footer-col li { margin: 0 0 20px; line-height: 20px; }
+footer .footer-content .footer-col li {
+  margin: 0 0 20px;
+  line-height: 20px;
+}
 
 footer .footer-content .footer-bottom {
   height: 82.7px;
@@ -73,15 +86,11 @@ footer .footer-content .footer-bottom {
   box-sizing: border-box;
 }
 
-footer .footer-content .footer-bottom ul {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
+footer .footer-content .footer-bottom img {
+  width: 90px;
+  height: auto;
+  display: block;
 }
-
-footer .footer-content .footer-bottom li { line-height: 15px; }
-
-footer .footer-content .footer-bottom img { width: 90px; height: auto; display: block; }
 
 footer .footer-content .footer-col:nth-child(1) ul { padding-right: 9.6px; }
 
@@ -89,21 +98,16 @@ footer .footer-content .footer-col:nth-child(2) ul { padding-right: 12.7px; }
 
 footer .footer-content .footer-col:nth-child(3) ul { padding-right: 8px; }
 
-footer .footer-content .footer-bottom ul { margin-top: 14.7px; }
-
-footer .footer-content .footer-bottom ul { gap: 0; }
-
-footer .footer-content .footer-bottom li { margin-left: 24px; }
+footer .footer-content .footer-bottom li {
+  line-height: 15px;
+  margin-left: 24px;
+}
 
 footer .footer-content .footer-bottom li:first-child { margin-left: 0; }
-
-footer .footer-content .footer-bottom li:nth-child(2) { margin-left: 28px; }
 
 footer .footer-content .footer-bottom li:nth-child(3) { margin-left: 24.5px; }
 
 footer .footer-content .footer-bottom li:nth-child(4) { margin-left: 25.4px; }
-
-footer .footer-content .footer-bottom li:nth-child(5) { margin-left: 24.8px; }
 
 footer .footer-content .footer-bottom li:nth-child(5) a span {
   display: inline-block;
@@ -116,7 +120,10 @@ footer .footer-content .footer-bottom li.footer-a11y { margin-left: 25px; }
 
 footer .footer-content .footer-bottom svg { display: block; }
 
-footer .footer-content .footer-bottom .footer-a11y svg { width: 64px; height: 24px; }
+footer .footer-content .footer-bottom .footer-a11y svg {
+  width: 64px;
+  height: 24px;
+}
 
 footer .footer-content .footer-bottom .default-content-wrapper > p {
   display: flex;
@@ -126,22 +133,32 @@ footer .footer-content .footer-bottom .default-content-wrapper > p {
 
 footer .footer-content .footer-bottom .default-content-wrapper > p .icon { margin: -11.5px 8px 0 0; }
 
-footer .footer-content .footer-bottom .default-content-wrapper > p .icon svg { width: 48px; height: 32px; }
+footer .footer-content .footer-bottom li:first-child svg {
+  width: 90px;
+  height: 30px;
+  padding-bottom: 3.5px;
+}
 
-footer .footer-content .footer-bottom .default-content-wrapper > p a { display: block; line-height: 20px; text-align: right; }
+footer .footer-content .footer-bottom .default-content-wrapper > p .icon svg {
+  width: 48px;
+  height: 32px;
+}
 
-footer .footer-content .footer-bottom .default-content-wrapper > p a span { display: block; text-align: right; }
+footer .footer-content .footer-bottom .default-content-wrapper > p a {
+  display: block;
+  line-height: 20px;
+  text-align: right;
+}
+
+footer .footer-content .footer-bottom .default-content-wrapper > p a span {
+  display: block;
+  text-align: right;
+}
 
 footer .footer-content .footer-bottom .default-content-wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-}
-
-footer .footer-content .footer-bottom li:first-child svg {
-  width: 90px;
-  height: 30px;
-  padding-bottom: 3.5px;
 }
 
 footer .footer-content .footer-bottom li:first-child a {
@@ -151,6 +168,12 @@ footer .footer-content .footer-bottom li:first-child a {
 
 footer .footer-content .footer-bottom li:nth-child(6) { margin-left: 25.4px; }
 
-footer .footer-content .footer-bottom li:nth-child(2) { padding-top: 0.8px; }
+footer .footer-content .footer-bottom li:nth-child(2) {
+  margin-left: 28px;
+  padding-top: 0.8px;
+}
 
-footer .footer-content .footer-bottom li:nth-child(5) { margin-top: -3px; }
+footer .footer-content .footer-bottom li:nth-child(5) {
+  margin-left: 24.8px;
+  margin-top: -3px;
+}

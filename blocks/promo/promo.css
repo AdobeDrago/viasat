@@ -12,7 +12,10 @@ main .promo-container .promo-wrapper {
   color: #fff;
 }
 
-.promo > div:first-child { position: absolute; inset: 0; }
+.promo > div:first-child {
+  position: absolute;
+  inset: 0;
+}
 
 .promo > div:first-child picture,
 .promo > div:first-child img {
@@ -24,19 +27,31 @@ main .promo-container .promo-wrapper {
 
 .promo > div:last-child {
   position: relative;
-  z-index: 1;
   box-sizing: border-box;
   max-width: 1200px;
   height: 100%;
   margin: 0 auto;
   padding: 160px 24px 0;
+  z-index: 2;
 }
 
-.promo > div:last-child > div { max-width: 560px; padding: 0; }
+.promo > div:last-child > div {
+  max-width: 560px;
+  padding: 0;
+}
 
-.promo h2 { margin: 0; font-size: 32px; font-weight: 700; line-height: 40px; }
+.promo h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+}
 
-.promo p { margin: 28px 0 0; font-size: 18px; line-height: 28px; }
+.promo p {
+  margin: 28px 0 0;
+  font-size: 18px;
+  line-height: 28px;
+}
 
 .promo p:last-child { margin-top: 32px; }
 
@@ -57,8 +72,6 @@ main .promo-container .promo-wrapper {
   inset: 0;
   background: linear-gradient(90deg, rgb(0 30 45 / 35%), rgb(0 30 45 / 12%));
 }
-
-.promo > div:last-child { z-index: 2; }
 
 .promo.page-hero > div:last-child { padding-top: 179px; }
 
@@ -90,9 +103,13 @@ main .promo-container .promo-wrapper {
   line-height: 32px;
 }
 
-.promo.page-hero::after { background: rgb(0 0 0 / 25.5%); }
+.promo.page-hero::after,
+.promo.dim::after {
+  display: block;
+  background: rgb(0 0 0 / 25.5%);
+}
 
-.promo.cta::after { display: none; }
+.promo.cta:not(.dim)::after { display: none; }
 
 .promo.cta > div:last-child { padding-top: 182px; }
 
@@ -112,4 +129,18 @@ main .promo-container .promo-wrapper {
   line-height: 24px;
 }
 
-.promo.cta > div:last-child > div { max-width: 720px; }
+.promo.cta > div:last-child > div { max-width: 900px; }
+
+.promo.cta.compact {
+  aspect-ratio: auto;
+  height: 476px;
+}
+
+.promo.cta.compact > div:first-child img {
+  height: auto;
+  aspect-ratio: 1920 / 728;
+}
+
+.promo.cta.compact > div:last-child { padding-top: 153px; }
+
+.promo.cta.compact p:not(:last-child) { margin-top: 17px; }

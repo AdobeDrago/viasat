@@ -7,7 +7,7 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
     const [pic, body] = row.children;
-    const [cat, date, title, tags] = [body.children[0], body.children[1], body.children[2], body.children[3]];
+    const [cat, date, title, tags] = body.children;
     pic.className = 'news-image';
     const badge = document.createElement('span');
     badge.className = 'news-category';

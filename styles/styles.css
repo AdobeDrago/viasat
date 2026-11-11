@@ -64,16 +64,6 @@
   }
 }
 
-body {
-  display: none;
-  margin: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: 1.6;
-}
-
 body.appear {
   display: block;
 }
@@ -289,15 +279,14 @@ main img {
   width: 100%;
 }
 
-/* sections */
-main > .section {
-  margin: 40px 0;
-}
-
 main > .section > div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
+}
+
+main > .section {
+  margin: 0;
 }
 
 main > .section:first-of-type {
@@ -318,10 +307,16 @@ main .section.highlight {
   padding: 40px 0;
 }
 
-/* viasat sections */
-body { overflow-x: hidden; }
-
-main > .section { margin: 0; }
+body {
+  display: none;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
 main .section.tiles-section,
 main .section.news-section,
@@ -349,21 +344,31 @@ main .section.tiles-section::before { background-color: #1c262f; }
 
 main .section.tiles-section > div,
 main .section.news-section > div,
-main .section.disclaimer-section > div { max-width: none; margin: 0; padding: 0 24px; }
+main .section.disclaimer-section > div {
+  max-width: none;
+  margin: 0;
+  padding: 0 24px;
+}
 
 main .section.tiles-section { padding: 72px 0; }
 
 main .section.news-section { padding: 56px 0 63px; }
 
-main .section.disclaimer-section { padding: 24px 0; font-size: 12px; line-height: 16px; }
-
 main .section.disclaimer-section p { margin: 0 0 16px; }
 
 main .section.hero-section,
 main .section.banner-section,
-main .section.promo-section { padding: 0; max-width: none; }
+main .section.promo-section {
+  padding: 0;
+  max-width: none;
+}
 
-main .section.disclaimer-section { padding: 40px 0 48px; color: #202e39; }
+main .section.disclaimer-section {
+  font-size: 12px;
+  line-height: 16px;
+  padding: 40px 0 48px;
+  color: #202e39;
+}
 
 /* aviation sections */
 main .section.notice-section {
@@ -379,7 +384,11 @@ main .section.notice-section {
 
 main .section.notice-section > div { display: contents; }
 
-main .section.notice-section p { margin: 0; font-size: 16px; line-height: 24px; }
+main .section.notice-section p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
 
 main .section.notice-section a {
   display: inline-block;
@@ -411,16 +420,38 @@ main .section.intro-section {
   text-align: center;
 }
 
-main .section.intro-section > div { max-width: none; margin: 0; padding: 0 24px; }
+main .section.intro-section > div {
+  max-width: none;
+  margin: 0;
+  padding: 0 24px;
+}
 
 main .section.intro-section p,
 main .section.intro-section h2 { margin: 0; }
 
 main .section.intro-section .icon,
 main .section.intro-section .icon svg,
-main .section.intro-section .icon img { display: block; width: 112px; height: 112px; margin: 0 auto; }
+main .section.intro-section .icon img {
+  display: block;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto;
+}
 
-main .section.intro-section h2 { margin-top: 16px; font-size: 32px; font-weight: 800; line-height: 40px; }
+main .section.intro-section .icon-oil-rig,
+main .section.intro-section .icon-oil-rig img {
+  width: 128px;
+  height: 128px;
+}
+
+main .section.intro-section .icon-oil-rig { margin-bottom: 24px; }
+
+main .section.intro-section h2 {
+  margin-top: 16px;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 40px;
+}
 
 main .section.intro-section h2 + p {
   max-width: 960px;
@@ -432,9 +463,20 @@ main .section.intro-section h2 + p {
   line-height: 32px;
 }
 
-main .section.solutions-section { box-sizing: border-box; height: 1816.4px; padding: 153px 0 0; }
+main .section.solutions-section {
+  box-sizing: border-box;
+  padding: 153px 0 152px;
+}
 
-main .section.solutions-section > div { max-width: none; margin: 0; padding: 0 24px; }
+main .section.solutions-section.compact {
+  padding: 112px 0;
+}
+
+main .section.solutions-section > div {
+  max-width: none;
+  margin: 0;
+  padding: 0 24px;
+}
 
 main .section.solutions-section h2 {
   position: relative;
@@ -456,6 +498,64 @@ main .section.solutions-section h2::after {
   background-color: #3bc0e0;
 }
 
-main .section.capacity-section { box-sizing: border-box; height: 1422px; padding: 152px 0 0; }
+main .section.solutions-section.compact h2 {
+  padding-bottom: 28px;
+}
 
-main .section.capacity-section > div { max-width: none; margin: 0; padding: 0 24px; }
+main .section.capacity-section {
+  box-sizing: border-box;
+  padding: 152px 0;
+}
+
+main .section.capacity-section > div {
+  max-width: none;
+  margin: 0;
+  padding: 0 24px;
+}
+
+main .section.breadcrumb-section {
+  box-sizing: border-box;
+  max-width: 1152px;
+  height: 48px;
+  margin: 0 auto;
+  padding: 14px 0;
+}
+
+main .section.breadcrumb-section > div {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+main .section.breadcrumb-section ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #202e39;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+main .section.breadcrumb-section li {
+  display: flex;
+  align-items: center;
+}
+
+main .section.breadcrumb-section li + li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  margin: 0 6px 0 4px;
+  border-top: 1.5px solid #202e39;
+  border-right: 1.5px solid #202e39;
+  transform: rotate(45deg);
+}
+
+main .section.breadcrumb-section .icon,
+main .section.breadcrumb-section .icon img {
+  display: block;
+  width: 16px;
+  height: 16px;
+}

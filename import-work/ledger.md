@@ -28,3 +28,23 @@ Offsets: heights match at 1440; ESG at 1280 and everything below it drift by ~62
 
 Section heights match the source at both widths. Shared change: promo now uses aspect-ratio 1920/728
 (home ESG at 1280 went 81.3 -> 91.6).
+
+# Viasat energy page (1440 / 1280), branch `energy`
+
+No new blocks. Reused: header (subnav), promo (page-hero, cta + new `compact`, `dim`), intro/solutions/capacity
+section styles, solutions (+ `outline`), feature-card. New: `breadcrumb-section` style, home and oil-rig icons.
+
+| Piece | Pixel 1440 / 1280 | Style mismatches |
+|---|---|---|
+| footer | 99.5 / 99.4 | 0 |
+| breadcrumb | 99.9 / 99.9 | 4 |
+| s5 connect | 98.7 / 95.9 | 27 |
+| s3 solutions | 97.0 / 97.0 | 24 |
+| header | 96.8 / 96.4 | 4 |
+| s1 hero | 96.2 / 90.2 | 11 |
+| s2 intro | 96.1 / 96.1 | 10 |
+| s4 video card | 93.1 / 93.1 | 10 |
+
+De-duplication: section navs are now sub-link-only fragments (`subnav` metadata); `/aviation/nav` converted.
+Shared fixes found here: feature-card poster was capped at 870px (now full 1056px), card and section heights are
+padding-based instead of fixed (aviation capacity 96.4 -> 96.9).

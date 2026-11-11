@@ -1,7 +1,6 @@
 .feature-card {
   box-sizing: border-box;
-  height: 1118px;
-  padding: 64px 48px 0;
+  padding: 64px 48px 74px;
   border-top: 4px solid #00a3d1;
   border-radius: 16px;
   background-color: #111920;
@@ -33,6 +32,7 @@
 }
 
 .feature-card .feature-card-media {
+  max-width: none;
   margin: 56px 0 0;
   background-color: #000;
 }
@@ -54,7 +54,7 @@
   line-height: 32px;
 }
 
-.feature-card p:last-child { margin-top: 36px; }
+.feature-card p:has(> a.button) { margin-top: 56px; }
 
 .feature-card a.button {
   display: inline-block;

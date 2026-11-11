@@ -44,7 +44,12 @@ main .news-container h2 {
 }
 
 .news .news-image picture,
-.news .news-image img { display: block; width: 100%; height: 207px; object-fit: cover; }
+.news .news-image img {
+  display: block;
+  width: 100%;
+  height: 207px;
+  object-fit: cover;
+}
 
 .news .news-category {
   position: absolute;
@@ -61,13 +66,29 @@ main .news-container h2 {
 
 .news .news-body { padding: 48px 16px 0; }
 
-.news .news-date { margin: 0; font-size: 12px; line-height: 16px; }
+.news .news-date {
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+}
 
-.news .news-title { margin-top: 16px; padding-right: 40px; }
+.news .news-title {
+  margin-top: 16px;
+  padding-right: 40px;
+}
 
-.news .news-title a { color: #202e39; font-size: 16px; font-weight: 700; line-height: 24px; }
+.news .news-title a {
+  color: #202e39;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
 
-.news .news-tags { display: flex; gap: 6px; margin-top: 24px; }
+.news .news-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 24px;
+}
 
 .news .news-tags span {
   padding: 0 8px;
@@ -79,7 +100,11 @@ main .news-container h2 {
   line-height: 20px;
 }
 
-.news .news-controls { position: relative; height: 56px; margin-top: 24px; }
+.news .news-controls {
+  position: relative;
+  height: 56px;
+  margin-top: 24px;
+}
 
 .news .news-prev,
 .news .news-next {
@@ -97,7 +122,13 @@ main .news-container h2 {
 
 .news .news-next { left: 70px; }
 
-.news .news-dots { position: absolute; top: 20px; left: 508px; display: flex; gap: 8px; }
+.news .news-dots {
+  position: absolute;
+  top: 20px;
+  left: 508px;
+  display: flex;
+  gap: 8px;
+}
 
 .news .news-dots span {
   width: 12px;
