@@ -65,8 +65,8 @@ Shared: carousel controls moved from `news` into `scripts/carousel.js` (used by 
 | s8 plans carousel | 97.6 | 47 |
 | s6 right for you | 97.5 | 58 |
 | header | 96.5 | 11 |
-| offer bar | 94.9 | 36 |
-| s1 hero (CNET badge) | 92.3 | 22 |
+| offer bar | 95.8 | 34 |
+| s1 hero (CNET badge) | 99.1 | 25 |
 
 Icons in the icon grid and plan cards are Material Symbols stand-ins for the source's proprietary icon font.
 

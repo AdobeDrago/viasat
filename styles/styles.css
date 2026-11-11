@@ -712,7 +712,7 @@ main .section.notice-section.offer p:last-child {
 
 main .section.notice-section.offer a { color: #006ead; }
 
-main .section.notice-section.offer p > a:only-child {
+main .section.notice-section.offer .button-container a {
   background-color: #00819d;
   box-shadow: none;
   color: #fff;

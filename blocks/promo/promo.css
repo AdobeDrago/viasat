@@ -153,6 +153,10 @@ main .promo-container .promo-wrapper {
 
 .promo.badge > div:nth-child(3) {
   position: absolute;
+  height: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0;
   z-index: 2;
   top: 98.4px;
   left: calc(50% + 288px);
